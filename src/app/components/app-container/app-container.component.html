@@ -1,0 +1,33 @@
+<div>
+  <form>
+    <span>is all checked</span>
+    <input
+      type="checkbox"
+      name="isAllChecked"
+      (click)="toggleAll()"
+      [(ngModel)]="isAllChecked" />
+
+    <div *ngFor="let item of items; let i = index;">
+      <input
+        type="checkbox"
+        [name]="'box' + i"
+        [value]="i"
+        [(ngModel)]="selectedBills[i]"
+      />
+      {{ item.id }}
+      {{ item.field1 }}
+      {{ item.field1 }}
+      {{ item.field1 }}
+    </div>
+  </form>
+
+  <div>
+    <input type="button" value="Enter" (click)="printSelected()" />
+    <div *ngFor="let p of printBills; let i = index;">
+      {{ p.id }}
+      {{ p.field1 }}
+      {{ p.field1 }}
+      {{ p.field1 }}
+    </div>
+  </div>
+</div>
